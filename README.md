@@ -38,3 +38,7 @@ npm uninstall @angular/material
 npm install --save @angular/material@7.3.7
 npm install --save @angular/cdk@7.3.7
 npm install --save @angular/animations@7.2.15
+
+git remote add origin https://github.com/papadicorso/corso-custom-theme-build.git
+
+git push -u origin master
