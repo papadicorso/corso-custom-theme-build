@@ -25,3 +25,16 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+ng new corso-custom-theme-build --prefix=cc --routing=false --style=scss 
+npm install --save @angular/material @angular/cdk @angular/animations
+https://v7.material.angular.io/guide/getting-started
+-Specifically update app.module.ts styles.scss and main.ts 
+
+ng generate module matio
+npm uninstall @angular/cdk
+npm uninstall @angular/material
+npm install --save @angular/material@7.3.7
+npm install --save @angular/cdk@7.3.7
+npm install --save @angular/animations@7.2.15
