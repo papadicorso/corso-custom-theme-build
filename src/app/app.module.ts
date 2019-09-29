@@ -4,11 +4,12 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppComponent } from "./app.component";
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-//import { MatioModule } from './matio/matio.module';
+import { MatioModule } from './matio/matio.module';
+
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, MatButtonModule, MatCheckboxModule],
+  imports: [BrowserModule, BrowserAnimationsModule, MatioModule],
   providers: [],
   bootstrap: [AppComponent]
 })
