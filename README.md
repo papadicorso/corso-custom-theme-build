@@ -42,3 +42,8 @@ npm install --save @angular/animations@7.2.15
 git remote add origin https://github.com/papadicorso/corso-custom-theme-build.git
 
 git push -u origin master
+
+
+ng generate component /components/card-one --module=app --dryRun=false
+ng generate component /components/card-two --module=app --dryRun=false
+ng generate component /components/card-two --module=app --dryRun=false
