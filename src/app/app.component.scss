@@ -1,0 +1,17 @@
+.flxContainer {
+    margin: 2px 0px 2px 0px; //margin on top and bottom
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.flxItem {
+    flex: 0 1 auto; 
+    display: flex;
+    width: 30%;
+}
+
+.flxItem + .flxItem {
+    margin-left: 1%;
+}
