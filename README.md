@@ -47,3 +47,9 @@ git push -u origin master
 ng generate component /components/card-one --module=app --dryRun=false
 ng generate component /components/card-two --module=app --dryRun=false
 ng generate component /components/card-two --module=app --dryRun=false
+
+https://coryrylan.com/blog/analyzing-bundle-size-with-the-angular-cli-and-webpack
+
+npm install --save-dev webpack-bundle-analyzer
+#Add this to the package.json - "scripts" section at the top
+package.json: "bundle-report": "webpack-bundle-analyzer dist/stats.json"
