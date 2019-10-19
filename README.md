@@ -53,3 +53,16 @@ https://coryrylan.com/blog/analyzing-bundle-size-with-the-angular-cli-and-webpac
 npm install --save-dev webpack-bundle-analyzer
 #Add this to the package.json - "scripts" section at the top
 package.json: "bundle-report": "webpack-bundle-analyzer dist/stats.json"
+
+## Uninstall existing global angular cli and install latest
+npm uninstall -g angular-cli
+npm cache clean or npm cache verify #(if npm > 5)
+npm install -g @angular/cli@latest
+
+
+ng update @angular/cli @angular/core
+ng update @angular/material
+
+# Also must re-install npm install --save-dev webpack-bundle-analyzer and update reference to stats.json
+
+"bundle-report": "webpack-bundle-analyzer dist/corso-custom-theme-build/stats-es2015.json"

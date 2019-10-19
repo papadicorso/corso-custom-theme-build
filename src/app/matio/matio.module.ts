@@ -8,6 +8,11 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatCardModule } from "@angular/material/card";
 import { MatToolbarModule } from "@angular/material/toolbar";
 
+
+import {MatDividerModule} from '@angular/material/divider'; 
+
+import {MatChipsModule} from '@angular/material/chips'; 
+
 @NgModule({
   declarations: [],
   imports: [
@@ -18,7 +23,9 @@ import { MatToolbarModule } from "@angular/material/toolbar";
     MatFormFieldModule,
     MatIconModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatChipsModule,
+    MatDividerModule
   ],
   exports: [
     MatButtonModule,
@@ -28,7 +35,9 @@ import { MatToolbarModule } from "@angular/material/toolbar";
     MatFormFieldModule,
     MatIconModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatChipsModule,
+    MatDividerModule
   ]
 })
 export class MatioModule {}

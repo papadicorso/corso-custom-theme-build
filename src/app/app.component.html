@@ -9,35 +9,81 @@
     <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
   </mat-toolbar-row>
 
-  <mat-toolbar-row>
-    <span>Third Line</span>
-    <span class="example-spacer"></span>
-    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
-    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
-  </mat-toolbar-row>
+
 </mat-toolbar>
 
-<h1 class="mat-headline">Header 1 - mat-headline</h1>
-<h2 class="mat-title">Header 2 - mat-title</h2>
-<div class="example-button-row">
-  <button mat-button>Basic</button>
-  <button mat-button color="primary">Primary</button>
-  <button mat-button color="accent">Accent</button>
-  <button mat-button color="warn">Warn</button>
-  <button mat-button disabled>Disabled</button>
-  <a mat-button routerLink=".">Link</a>
-</div>
+<div class="flxContainer">
 
-<h1 class="mat-headline">Header 1 - mat-headline</h1>
-<h2 class="mat-title">Header 2 - mat-title</h2>
-<div class="example-button-row">
-  <button mat-raised-button>Basic</button>
-  <button mat-raised-button color="primary">Primary</button>
-  <button mat-raised-button color="accent">Accent</button>
-  <button mat-raised-button color="warn">Warn</button>
-  <button mat-raised-button disabled>Disabled</button>
-  <a mat-raised-button routerLink=".">Link</a>
-</div>
+  <div class="flxItem">
+    <div class="mat-display-2">mat-display-2</div>
+    <mat-divider></mat-divider>
+    
+    <div class="mat-display-1">mat-display-1</div>
+    <mat-divider></mat-divider>
+
+    <h1 class="mat-headline">Header 1 - mat-headline</h1>
+    <h2 class="mat-title">Header 2 - mat-title</h2>
+    <h3 class="mat-subheading-2">Header 3 - .mat-subheading-2</h3>
+    <h4 class="mat-subheading-1">Header 4 - .mat-subheading-1</h4>
+    
+    <mat-divider></mat-divider>
+
+    <h1 class="mat-h1">Header 1 - mat-h1</h1>
+    <h2 class="mat-h2">Header 2 - mat-h2</h2>
+    <h3 class="mat-h3">Header 3 - mat-h3</h3>
+    <h4 class="mat-h4">Header 4 - mat-h4</h4>
+  </div>
+
+  <div class="flxItem">
+    <div class="flx-button-row">
+      <button mat-stroked-button>Basic</button>
+      <button mat-stroked-button color="primary">Primary</button>
+      <button mat-stroked-button color="accent">Accent</button>
+      <button mat-stroked-button color="warn">Warn</button>
+      <button mat-stroked-button disabled>Disabled</button>
+      <a mat-stroked-button routerLink=".">Link</a>
+    </div>
+    <div class="flx-button-row">
+      <button mat-raised-button>Basic</button>
+      <button mat-raised-button color="primary">Primary</button>
+      <button mat-raised-button color="accent">Accent</button>
+      <button mat-raised-button color="warn">Warn</button>
+      <button mat-raised-button disabled>Disabled</button>
+      <a mat-raised-button routerLink=".">Link</a>
+    </div>
+  </div>
+
+
+  <div class="flxItem">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Input Form Field</mat-label>
+      <input matInput placeholder="Placeholder">
+      <mat-hint>Input Hint</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Select Form field</mat-label>
+      <mat-select>
+        <mat-option>A</mat-option>
+        <mat-option>B</mat-option>
+        <mat-option>C</mat-option>
+      </mat-select>
+      <mat-hint>Select Hint</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Chip Form field</mat-label>
+      <mat-chip-list aria-label="Chip Selection">
+        <mat-chip color="primary" selected>Primary</mat-chip>
+        <mat-chip color="accent" removable="true">Accent</mat-chip>
+      </mat-chip-list>
+    </mat-form-field>
+
+  </div>
+
+</div> <!-- Close Flex Container -->
+
 
 <div class="flxContainer">
   <div class="flxItem">
