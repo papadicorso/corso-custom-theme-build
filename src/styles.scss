@@ -39,20 +39,24 @@ $grey-theme: mat-light-theme($grey-theme-primary, $grey-theme-accent, $grey-them
 @include angular-material-theme($grey-theme);
 
 
+ // mat-typography-level(font-size, line-height, font-weight);
+
 // Define a custom typography config that overrides the font-family as well as the
 // `headlines` and `body-1` levels.
 $corso-typography-1: mat-typography-config(
-  $font-family: 'Pacifico, cursive',
-  $headline: mat-typography-level(32px, 48px, 700),
-  $title: mat-typography-level(16px, 24px, 900),
-  $subheading-2: mat-typography-level(16px, 24px, 900),
-  $subheading-1: mat-typography-level(16px, 24px, 900)
+  $font-family: 'Pacifico, cursive'
 );
 
 $corso-typography-2: mat-typography-config(
   $font-family: 'Poiret One, cursive',
-  $display-1: mat-typography-level(48px, 50px, 700),
-  $display-2: mat-typography-level(64px, 80px, 700)
+  $display-2: mat-typography-level(64px, 80px, 900),
+  $display-1: mat-typography-level(48px, 60px, 800),
+  $headline: mat-typography-level(32px, 48px, 700),
+  $title: mat-typography-level(24px, 30px, 900),
+  $subheading-2: mat-typography-level(18px, 24px, 900),
+  $subheading-1: mat-typography-level(16px, 24px, 900),
+  $body-2: mat-typography-level(16px, 18px, 900),
+  $body-1: mat-typography-level(16px, 18px, 600),
   
 );
 
