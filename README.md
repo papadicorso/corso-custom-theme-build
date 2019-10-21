@@ -54,6 +54,8 @@ npm install --save-dev webpack-bundle-analyzer
 #Add this to the package.json - "scripts" section at the top
 package.json: "bundle-report": "webpack-bundle-analyzer dist/stats.json"
 
+# Command to run is npm run bundle-report
+
 ## Uninstall existing global angular cli and install latest
 npm uninstall -g angular-cli
 npm cache clean or npm cache verify #(if npm > 5)

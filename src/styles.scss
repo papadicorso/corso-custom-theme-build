@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 //@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -13,42 +13,55 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $brindle-theme-primary: mat-palette($mat-brown, 300, 50, 500);
-$brindle-theme-accent:  mat-palette($mat-amber);
+$brindle-theme-accent: mat-palette($mat-amber);
 // The warn palette is optional (defaults to red).
-$brindle-theme-warn:    mat-palette($mat-red);
+$brindle-theme-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$brindle-theme: mat-light-theme($brindle-theme-primary, $brindle-theme-accent, $brindle-theme-warn);
+$brindle-theme: mat-light-theme(
+  $brindle-theme-primary,
+  $brindle-theme-accent,
+  $brindle-theme-warn
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
+$gray-theme-primary: mat-palette($mat-blue-gray, 300, 50, 500);
+$gray-theme-accent: mat-palette($mat-lime);
+// The warn palette is optional (defaults to red).
+$gray-theme-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$gray-theme: mat-light-theme(
+  $gray-theme-primary,
+  $gray-theme-accent,
+  $gray-theme-warn
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+
 @include angular-material-theme($brindle-theme);
 
-$grey-theme-primary: mat-palette($mat-brown, 300, 50, 500);
-$grey-theme-accent:  mat-palette($mat-amber);
-// The warn palette is optional (defaults to red).
-$grey-theme-warn:    mat-palette($mat-red);
+/**
+  The mat-typography-level function arguments are font-size, line-height, font-weight
+  The font-weight is a value pulled from the color pallette 
 
-// Create the theme object (a Sass map containing all of the palettes).
-$grey-theme: mat-light-theme($grey-theme-primary, $grey-theme-accent, $grey-theme-warn);
+  mat-typography-level(font-size, line-height, font-weight);
+**/
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include angular-material-theme($grey-theme);
+/**
+  The following 2 are typography configurations 
+**/
 
-
- // mat-typography-level(font-size, line-height, font-weight);
-
-// Define a custom typography config that overrides the font-family as well as the
-// `headlines` and `body-1` levels.
 $corso-typography-1: mat-typography-config(
-  $font-family: 'Pacifico, cursive'
+  $font-family: "Pacifico, cursive"
 );
 
 $corso-typography-2: mat-typography-config(
-  $font-family: 'Poiret One, cursive',
+  $font-family: "Poiret One, cursive",
   $display-2: mat-typography-level(64px, 80px, 900),
   $display-1: mat-typography-level(48px, 60px, 800),
   $headline: mat-typography-level(32px, 48px, 700),
@@ -56,15 +69,70 @@ $corso-typography-2: mat-typography-config(
   $subheading-2: mat-typography-level(18px, 24px, 900),
   $subheading-1: mat-typography-level(16px, 24px, 900),
   $body-2: mat-typography-level(16px, 18px, 900),
-  $body-1: mat-typography-level(16px, 18px, 600),
-  
+  $body-1: mat-typography-level(16px, 18px, 300)
 );
 
-// Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
-//@include mat-base-typography($corso-typography-1);
-@include mat-base-typography($corso-typography-2);
-
-// Order matters - Set up the overarching typography for all angular components
+// Override typography for ALL Angular Material. including mat-base-typography and all components.
+// Text components, buttons, everything
 @include angular-material-typography($corso-typography-2);
-//Override the base with a different typography for the mat-card component
+
+/**
+  Override typography CSS classes ONLY (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+  Not using this right now, but if you wanted one typography for the headers and body text to change 
+  we could use this
+*/
+//@include mat-base-typography($corso-typography-1);
+
+/**
+  Override the app typography declared above with a different typography config 
+  for the mat-card component
+**/
 @include mat-card-typography($corso-typography-1);
+@include mat-button-typography($corso-typography-1);
+@include mat-toolbar-typography($corso-typography-2);
+
+
+// This adds a CSS class that we can use to change the them for specific components.
+// Any Material Component that uses this CSS class will have it's own and all it's child components theme changed
+.corso-gray-theme {
+  @include angular-material-theme($gray-theme);
+}
+
+.corso-button {
+  @include mat-button-typography($corso-typography-2);
+}
+
+// Define a mixin that accepts a theme and outputs the theme-specific styles.
+@mixin corso-card-mixin($gray-theme) {
+  // Extract the palettes you need from the theme definition.
+  $primary: map-get($gray-theme, primary);
+  $accent: map-get($gray-theme, accent);
+
+  .mat-card {
+    // Use mat-color to extract individual colors from a palette.
+    //background-color: mat-color($accent, lighter);
+    border-style: solid;
+    border-width: 2px;
+    border-color: mat-color($primary, "100-contrast");
+  }
+
+  .mat-card-header {
+    // Use mat-color to extract individual colors from a palette.
+    background-color: mat-color($primary);
+  }
+}
+@include corso-card-mixin($gray-theme);
+
+// Create a config with the default typography levels.
+//$config: mat-typography-config();
+
+// Alternate Font Class for headline - aka - h1
+.corso-headline {
+  font-size: mat-font-size($corso-typography-1, headline);
+  font-family: mat-font-family($corso-typography-1);
+}
+// Alternate Font Class for subheading-1 - aka - h4
+.corso-subheading-1 {
+  font-size: mat-font-size($corso-typography-1, subheading-1);
+  font-family: mat-font-family($corso-typography-1);
+}
