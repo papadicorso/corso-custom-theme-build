@@ -1,6 +1,7 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span>Custom Toolbar</span>
+
+  <mat-toolbar-row class="display-1">
+    <span class="corso-display-1">Custom Toolbar</span>
   </mat-toolbar-row>
 
   <mat-toolbar-row>
@@ -15,7 +16,7 @@
 <div class="flxContainer">
 
   <div class="flxItem">
-    <div class="mat-display-2">mat-display-2</div>
+    <div class="corso-display-2">mat-display-2</div>
     <mat-divider></mat-divider>
     <div class="mat-display-1">mat-display-1</div>
 
@@ -76,6 +77,14 @@
       </mat-select>
       <mat-hint>Select Hint</mat-hint>
     </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="myDatepicker">
+        <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #myDatepicker></mat-datepicker>
+      </mat-form-field>
+
+
 
     <mat-form-field appearance="outline">
       <mat-label>Chip Form field</mat-label>

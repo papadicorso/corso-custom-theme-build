@@ -57,13 +57,14 @@ $gray-theme: mat-light-theme(
 **/
 
 $corso-typography-1: mat-typography-config(
-  $font-family: "Pacifico, cursive"
+  $font-family: "Pacifico, cursive",
+  $display-2: mat-typography-level(44px, 54px, 900)
 );
 
 $corso-typography-2: mat-typography-config(
   $font-family: "Poiret One, cursive",
-  $display-2: mat-typography-level(64px, 80px, 900),
-  $display-1: mat-typography-level(48px, 60px, 800),
+  $display-2: mat-typography-level(44px, 54px, 900),
+  $display-1: mat-typography-level(40px, 50px, 800),
   $headline: mat-typography-level(32px, 48px, 700),
   $title: mat-typography-level(24px, 30px, 900),
   $subheading-2: mat-typography-level(18px, 24px, 900),
@@ -118,8 +119,9 @@ $corso-typography-2: mat-typography-config(
 
   .mat-card-header {
     // Use mat-color to extract individual colors from a palette.
-    background-color: mat-color($primary);
+    background-color: mat-color($primary, 100);
   }
+
 }
 @include corso-card-mixin($gray-theme);
 
@@ -135,4 +137,18 @@ $corso-typography-2: mat-typography-config(
 .corso-subheading-1 {
   font-size: mat-font-size($corso-typography-1, subheading-1);
   font-family: mat-font-family($corso-typography-1);
+}
+
+.corso-display-1 {
+  font-size: mat-font-size($corso-typography-2, display-1);
+  font-family: mat-font-family($corso-typography-2);
+}
+
+.corso-display-2 {
+  font-size: mat-font-size($corso-typography-1, display-2);
+  font-family: mat-font-family($corso-typography-1);
+}
+
+.mat-card-content {
+  font-family: mat-font-family($corso-typography-2);
 }

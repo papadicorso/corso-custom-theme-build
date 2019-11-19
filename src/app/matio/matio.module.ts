@@ -7,11 +7,10 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import { MatCardModule } from "@angular/material/card";
 import { MatToolbarModule } from "@angular/material/toolbar";
-
-
-import {MatDividerModule} from '@angular/material/divider'; 
-
-import {MatChipsModule} from '@angular/material/chips'; 
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material";
+import { MatDividerModule } from "@angular/material/divider";
+import { MatChipsModule } from "@angular/material/chips";
 
 @NgModule({
   declarations: [],
@@ -25,7 +24,9 @@ import {MatChipsModule} from '@angular/material/chips';
     MatCardModule,
     MatToolbarModule,
     MatChipsModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     MatButtonModule,
@@ -37,7 +38,9 @@ import {MatChipsModule} from '@angular/material/chips';
     MatCardModule,
     MatToolbarModule,
     MatChipsModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class MatioModule {}
